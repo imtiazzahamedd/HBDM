@@ -14,11 +14,16 @@
 
 <body class="bg-gradient-to-br from-pink-50 via-purple-50 to-rose-50 overflow-x-hidden h-screen snap-y snap-mandatory">
 
-    <!-- Intro Sequence (Video-like) -->
     <div id="intro-sequence"
         class="fixed inset-0 z-[100] bg-gradient-to-br from-pink-100 via-purple-100 to-rose-100 flex items-center justify-center transition-all duration-1000">
         <!-- Soft glassmorphism overlay -->
         <div class="absolute inset-0 backdrop-blur-sm bg-white/10"></div>
+        
+        <!-- Skip Button -->
+        <button id="skip-intro" class="fixed top-8 right-8 z-[110] px-6 py-2 bg-white/20 backdrop-blur-md border border-white/40 rounded-full text-purple-600 font-semibold text-sm hover:bg-white/40 transition-all duration-300 flex items-center gap-2 group">
+            Skip Intro
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </button>
         
         <div class="text-center px-6 max-w-2xl relative z-10 w-full h-full flex items-center justify-center">
             <!-- Animation Steps 1-12 -->
@@ -87,7 +92,7 @@
         <!-- Floating Navigation Bar -->
         <nav id="floating-nav" class="fixed bottom-3 right-3 z-50 transition-all duration-500 w-auto">
             <!-- Toggle Button - Always visible and fixed -->
-            <button id="nav-toggle" class="nav-button alabu text-white font-bold py-2 px-6 rounded-xl transition-all duration-300 z-[60] border-2 border-white/30 hover:scale-105 flex items-center justify-center whitespace-nowrap min-w-[120px]">
+            <button id="nav-toggle" class="nav-button alabu text-white font-bold py-1 px-2 rounded-xl transition-all duration-300 z-[60] hover:scale-105 flex items-center justify-center whitespace-nowrap min-w-[120px]">
                 <span id="nav-text" class="text-xs tracking-wider text-center w-full text-gray-500">ALABU</span>
             </button>
             
@@ -210,7 +215,7 @@
 
             <!-- Scroll Indicator -->
             <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-purple-400">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-8 h-8 opacity-25" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                 </svg>

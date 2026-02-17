@@ -1,6 +1,8 @@
 // Intro Sequence Animation
 const introSequence = document.getElementById('intro-sequence');
 const mainContent = document.getElementById('main-content');
+const skipBtn = document.getElementById('skip-intro');
+let introTimeouts = [];
 
 // Define all 12 sequence steps
 const introTexts = [
@@ -28,22 +30,24 @@ function startIntro() {
     let currentDelay = 800;
 
     introTexts.forEach((text, index) => {
-        setTimeout(() => {
+        const t1 = setTimeout(() => {
             const element = document.getElementById(text.id);
             if (element) {
                 element.classList.add('intro-text-premium', 'active');
 
-                setTimeout(() => {
+                const t2 = setTimeout(() => {
                     element.classList.remove('active');
                 }, text.duration);
+                introTimeouts.push(t2);
             }
         }, currentDelay);
+        introTimeouts.push(t1);
 
         currentDelay += text.duration + 800;
     });
 
     // Show combined text view
-    setTimeout(() => {
+    const tCombined = setTimeout(() => {
         const allTexts = document.getElementById('intro-all');
         if (allTexts) {
             allTexts.style.opacity = '1';
@@ -51,24 +55,54 @@ function startIntro() {
             allTexts.classList.add('reveal-up', 'revealed');
         }
     }, currentDelay);
+    introTimeouts.push(tCombined);
 
     // End intro
     const totalIntroTime = currentDelay + 5000;
 
-    setTimeout(() => {
-        if (introSequence) {
-            introSequence.style.opacity = '0';
-            introSequence.style.transition = 'opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1)';
-
-            setTimeout(() => {
-                introSequence.style.display = 'none';
-                if (mainContent) {
-                    mainContent.style.opacity = '1';
-                    document.body.style.overflow = 'auto';
-                }
-            }, 1500);
-        }
+    const tEnd = setTimeout(() => {
+        finishIntro();
     }, totalIntroTime);
+    introTimeouts.push(tEnd);
+}
+
+function finishIntro() {
+    if (introSequence) {
+        introSequence.style.opacity = '0';
+        introSequence.style.transition = 'opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1)';
+
+        setTimeout(() => {
+            introSequence.style.display = 'none';
+            if (mainContent) {
+                mainContent.style.opacity = '1';
+                document.body.style.overflow = 'auto';
+            }
+        }, 1500);
+    }
+}
+
+function skipIntro() {
+    // Clear all scheduled timeouts
+    introTimeouts.forEach(t => clearTimeout(t));
+    
+    // Jump to the end animation state
+    if (introSequence) {
+        introSequence.style.opacity = '0';
+        introSequence.style.transition = 'opacity 0.8s ease-out';
+        
+        setTimeout(() => {
+            introSequence.style.display = 'none';
+            if (mainContent) {
+                mainContent.style.opacity = '1';
+                document.body.style.overflow = 'auto';
+            }
+        }, 800);
+    }
+}
+
+// Event Listeners
+if (skipBtn) {
+    skipBtn.addEventListener('click', skipIntro);
 }
 
 // Start the intro
