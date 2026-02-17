@@ -142,23 +142,65 @@
             </div>
         </section>
 
-        <!-- Section 2: Hero -->
-        <section
-            class="relative z-10 h-screen flex flex-col items-center justify-center px-4 py-12 snap-start snap-always">
-
-            <div class="text-center animate-fade-in">
-                <h1
-                    class="text-5xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 animate-gradient font-dancing">
-                    Happy Birthday
-                </h1>
-                <h2 class="text-6xl md:text-8xl font-bold text-purple-600 mb-4 animate-bounce-slow font-dancing">
-                    Mitisa
-                </h2>
-                <p class="text-2xl md:text-3xl text-gray-700 mb-6 animate-fade-in-delay-1">
-                    My Beautiful Wife 💝
-                </p>
-                <div class="text-6xl md:text-8xl animate-pulse-slow">
-                    🎂🎉🎁
+        <!-- Section 2: Hero Birthday Section -->
+        <section class="relative z-10 h-screen flex flex-col items-center justify-center px-4 py-12 snap-start snap-always overflow-hidden">
+            <!-- Animated background gradient -->
+            <div class="absolute inset-0 bg-gradient-to-br from-pink-200 via-purple-200 to-rose-200 animate-gradient-shift"></div>
+            
+            <!-- Floating birthday elements -->
+            <div class="absolute top-10 left-10 text-6xl animate-float-slow">🎂</div>
+            <div class="absolute top-20 right-20 text-5xl animate-float-slower">🎈</div>
+            <div class="absolute bottom-20 left-20 text-5xl animate-float">🎁</div>
+            <div class="absolute bottom-32 right-16 text-6xl animate-float-slow">🎉</div>
+            <div class="absolute top-1/3 left-1/4 text-4xl animate-float-slower opacity-70">✨</div>
+            <div class="absolute top-2/3 right-1/3 text-4xl animate-float opacity-70">💝</div>
+            
+            <div class="relative z-10 max-w-2xl w-full text-center">
+                <!-- Glowing card container -->
+                <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-2xl border-4 border-transparent bg-gradient-to-br from-white via-pink-50 to-purple-50 relative overflow-hidden">
+                    <!-- Animated border glow -->
+                    <div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-pink-400 via-purple-400 to-rose-400 opacity-30 blur-xl animate-pulse-gentle"></div>
+                    
+                    <div class="relative z-10">
+                        <!-- Animated title with gradient -->
+                        <h1 class="text-5xl md:text-7xl font-bold mb-6 font-dancing animate-bounce-gentle">
+                            <span class="bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 bg-clip-text text-transparent animate-gradient-text">
+                                Happy Birthday
+                            </span>
+                        </h1>
+                        
+                        <!-- Name with sparkle effect -->
+                        <h2 class="text-6xl md:text-8xl font-bold mb-8 font-dancing relative">
+                            <span class="bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 bg-clip-text text-transparent drop-shadow-lg animate-pulse-gentle">
+                                Mitisa
+                            </span>
+                            <span class="absolute -top-2 -right-2 text-3xl animate-spin-slow">✨</span>
+                        </h2>
+                        
+                        <!-- Subtitle with animation -->
+                        <p class="text-2xl md:text-3xl text-gray-700 mb-8 font-semibold animate-fade-in-up">
+                            My Beautiful Wife 
+                            <span class="inline-block animate-bounce-gentle animation-delay-200">�</span>
+                        </p>
+                        
+                        <!-- Animated emoji row -->
+                        <div class="flex justify-center gap-6 md:gap-8 text-6xl md:text-7xl">
+                            <div class="transform hover:scale-125 transition-all duration-300 animate-bounce-gentle">🎂</div>
+                            <div class="transform hover:scale-125 transition-all duration-300 animate-bounce-gentle animation-delay-200">🎉</div>
+                            <div class="transform hover:scale-125 transition-all duration-300 animate-bounce-gentle animation-delay-400"></div>
+                        </div>
+                        
+                        <!-- Sparkle particles -->
+                        <div class="absolute top-4 left-4 text-2xl animate-ping opacity-75">✨</div>
+                        <div class="absolute top-8 right-8 text-2xl animate-ping animation-delay-200 opacity-75">💫</div>
+                        <div class="absolute bottom-8 left-12 text-2xl animate-ping animation-delay-400 opacity-75">⭐</div>
+                        <div class="absolute bottom-4 right-4 text-2xl animate-ping animation-delay-600 opacity-75">✨</div>
+                    </div>
+                </div>
+                
+                <!-- Scroll hint -->
+                <div class="mt-8 animate-bounce">
+                    <p class="text-purple-600 font-semibold">Scroll down for more! 👇</p>
                 </div>
             </div>
         </section>
@@ -213,13 +255,7 @@
                     </div>
                 </div>
 
-                <!-- Interactive Button -->
-                <div class="mt-8 text-center">
-                    <button onclick="scrollToSurprise()"
-                        class="bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 text-white font-bold py-4 px-8 rounded-full shadow-lg transform hover:scale-110 hover:shadow-2xl transition-all duration-300 animate-pulse-gentle">
-                        Click for a Surprise! 🎁
-                    </button>
-                </div>
+               
             </div>
         </section>
 
@@ -279,18 +315,188 @@
             </div>
         </section>
 
-        <!-- Section 5: 10 Reasons I Love You -->
-        <section class="relative z-10 h-screen flex flex-col items-center justify-center px-4 py-8 snap-start snap-always">
-            <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 mb-8 font-dancing">
-                10 Reasons I Love You 💝
-            </h2>
-            <div class="reasons-grid w-full max-w-lg overflow-y-auto max-h-[70vh]">
-                <!-- Cards will be generated by JS -->
+        <!-- Section 5: Our Journey Together - Countdown -->
+        <section class="relative z-10 h-screen flex flex-col items-center justify-center px-4 py-12 snap-start snap-always">
+            <div class="max-w-2xl w-full text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 mb-8 font-dancing">
+                    Our Beautiful Journey 💝
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <!-- Days Together -->
+                    <div class="bg-gradient-to-br from-pink-100 to-purple-100 rounded-3xl p-6 shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <div class="text-5xl md:text-6xl font-bold text-purple-600 mb-2" id="days-count">0</div>
+                        <div class="text-lg text-gray-700 font-semibold">Days Together</div>
+                        <div class="text-3xl mt-2">💝</div>
+                    </div>
+                    
+                    <!-- Hours Together -->
+                    <div class="bg-gradient-to-br from-purple-100 to-rose-100 rounded-3xl p-6 shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <div class="text-5xl md:text-6xl font-bold text-rose-600 mb-2" id="hours-count">0</div>
+                        <div class="text-lg text-gray-700 font-semibold">Hours of Love</div>
+                        <div class="text-3xl mt-2">⏰</div>
+                    </div>
+                    
+                    <!-- Moments Together -->
+                    <div class="bg-gradient-to-br from-rose-100 to-pink-100 rounded-3xl p-6 shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <div class="text-5xl md:text-6xl font-bold text-pink-600 mb-2" id="minutes-count">0</div>
+                        <div class="text-lg text-gray-700 font-semibold">Minutes of Joy</div>
+                        <div class="text-3xl mt-2">✨</div>
+                    </div>
+                </div>
+                
+                <p class="text-xl text-purple-700 italic">And counting... forever! ♾️💝</p>
             </div>
-            <p class="mt-4 text-gray-500 italic text-sm">Tap each heart to reveal 💝</p>
         </section>
 
-        <!-- Section 6: Final Surprise Message (Hidden by default) -->
+        <!-- Section 6: Memory Timeline -->
+        <section class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-12 snap-start snap-always">
+            <div class="max-w-3xl w-full">
+                <h2 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 mb-12 text-center font-dancing">
+                    Our Love Story Timeline 📖
+                </h2>
+                
+                <div class="space-y-8">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item flex gap-4 items-start animate-fade-in">
+                        <div class="timeline-marker flex-shrink-0 w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg">
+                            �
+                        </div>
+                        <div class="timeline-content bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl flex-1 transform hover:scale-105 transition-all duration-300">
+                            <div class="text-sm text-purple-600 font-semibold mb-2">September 3, 2024</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">We Started Talking</h3>
+                            <p class="text-gray-700">The first conversation that changed everything. Little did we know this was the beginning of our beautiful journey! 💝</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item flex gap-4 items-start animate-fade-in animation-delay-200">
+                        <div class="timeline-marker flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-rose-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg">
+                            💕
+                        </div>
+                        <div class="timeline-content bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl flex-1 transform hover:scale-105 transition-all duration-300">
+                            <div class="text-sm text-purple-600 font-semibold mb-2">October 19, 2024</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">First Meeting</h3>
+                            <p class="text-gray-700">The day I finally saw you in person! Your smile was even more beautiful than I imagined. My heart knew you were the one! ✨</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item flex gap-4 items-start animate-fade-in animation-delay-400">
+                        <div class="timeline-marker flex-shrink-0 w-12 h-12 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg">
+                            �
+                        </div>
+                        <div class="timeline-content bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl flex-1 transform hover:scale-105 transition-all duration-300">
+                            <div class="text-sm text-purple-600 font-semibold mb-2">March 7, 2025</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">We Got Married!</h3>
+                            <p class="text-gray-700">The most special day of our lives! I promised to love you forever, and I meant every word. You became my wife! 💑💍</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item flex gap-4 items-start animate-fade-in animation-delay-600">
+                        <div class="timeline-marker flex-shrink-0 w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg">
+                            🏠
+                        </div>
+                        <div class="timeline-content bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl flex-1 transform hover:scale-105 transition-all duration-300">
+                            <div class="text-sm text-purple-600 font-semibold mb-2">October 28, 2025</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Our Home Together</h3>
+                            <p class="text-gray-700">Finally living under the same roof! Every day with you at home is a blessing. This is where our forever truly begins! 🏡💝</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Love Letter -->
+        <section class="relative z-10 h-screen flex flex-col items-center justify-center px-4 py-12 snap-start snap-always">
+            <div class="max-w-2xl w-full">
+                <div class="bg-gradient-to-br from-pink-50 via-purple-50 to-rose-50 rounded-3xl p-8 md:p-12 shadow-2xl border-4 border-pink-200">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">💌</div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-purple-600 font-dancing">A Letter to My Love</h2>
+                    </div>
+                    
+                    <div class="space-y-4 text-gray-700 leading-relaxed max-h-[60vh] overflow-y-auto">
+                        <p class="text-lg italic">My Dearest Mitisa,</p>
+                        
+                        <p>Words cannot express how much you mean to me. You are the sunshine that brightens my darkest days, the melody that makes my heart sing, and the dream I never want to wake up from.</p>
+                        
+                        <p>Every moment with you is a treasure I hold close to my heart. Your smile has the power to make everything better, your laugh is my favorite sound in the world, and your love is the greatest gift I've ever received.</p>
+                        
+                        <p>You've taught me what it means to truly love and be loved. With you, I've discovered a happiness I never knew existed. You make me want to be a better person every single day.</p>
+                        
+                        <p>Thank you for being you - for your kindness, your strength, your beautiful soul. Thank you for choosing me, for believing in us, for making every day an adventure.</p>
+                        
+                        <p class="text-xl font-semibold text-pink-600">I love you more than words can say, today and always. 💝</p>
+                        
+                        <p class="text-right italic mt-6">Forever yours,<br>Your Love</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Wish List -->
+        <section class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-12 snap-start snap-always">
+            <div class="max-w-3xl w-full">
+                <h2 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 mb-12 text-center font-dancing">
+                    My Wishes For You 🌟
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Wish 1 -->
+                    <div class="wish-card bg-gradient-to-br from-pink-100 to-purple-100 rounded-3xl p-6 shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <div class="text-4xl mb-3">🌈</div>
+                        <h3 class="text-xl font-bold text-purple-600 mb-2">Endless Happiness</h3>
+                        <p class="text-gray-700">May your days be filled with joy, laughter, and all the happiness you deserve!</p>
+                    </div>
+                    
+                    <!-- Wish 2 -->
+                    <div class="wish-card bg-gradient-to-br from-purple-100 to-rose-100 rounded-3xl p-6 shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <div class="text-4xl mb-3">✨</div>
+                        <h3 class="text-xl font-bold text-rose-600 mb-2">Dreams Come True</h3>
+                        <p class="text-gray-700">May all your dreams and aspirations become beautiful realities!</p>
+                    </div>
+                    
+                    <!-- Wish 3 -->
+                    <div class="wish-card bg-gradient-to-br from-rose-100 to-pink-100 rounded-3xl p-6 shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <div class="text-4xl mb-3">💪</div>
+                        <h3 class="text-xl font-bold text-pink-600 mb-2">Strength & Success</h3>
+                        <p class="text-gray-700">May you always have the strength to overcome any challenge and achieve greatness!</p>
+                    </div>
+                    
+                    <!-- Wish 4 -->
+                    <div class="wish-card bg-gradient-to-br from-pink-100 to-purple-100 rounded-3xl p-6 shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <div class="text-4xl mb-3">🌺</div>
+                        <h3 class="text-xl font-bold text-purple-600 mb-2">Health & Wellness</h3>
+                        <p class="text-gray-700">May you always be blessed with good health and vibrant energy!</p>
+                    </div>
+                    
+                    <!-- Wish 5 -->
+                    <div class="wish-card bg-gradient-to-br from-purple-100 to-rose-100 rounded-3xl p-6 shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <div class="text-4xl mb-3">🎨</div>
+                        <h3 class="text-xl font-bold text-rose-600 mb-2">Creativity & Passion</h3>
+                        <p class="text-gray-700">May you always find joy in your passions and express your beautiful creativity!</p>
+                    </div>
+                    
+                    <!-- Wish 6 -->
+                    <div class="wish-card bg-gradient-to-br from-rose-100 to-pink-100 rounded-3xl p-6 shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <div class="text-4xl mb-3">💝</div>
+                        <h3 class="text-xl font-bold text-pink-600 mb-2">Our Forever</h3>
+                        <p class="text-gray-700">May our love grow stronger with each passing day, forever and always!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Interactive Button -->
+            <div class="mt-8 text-center">
+                <button onclick="scrollToSurprise()"
+                    class="bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 text-white font-bold py-4 px-8 rounded-full shadow-lg transform hover:scale-110 hover:shadow-2xl transition-all duration-300 animate-pulse-gentle">
+                    Click for a Surprise! 🎁
+                </button>
+            </div>
+        </section>
+       
+        <!-- Section 10: Final Surprise Message (Hidden by default) -->
         <section id="surprise"
             class="hidden relative z-10 h-screen flex-col items-center justify-center px-4 py-12 snap-start snap-always">
             <div
@@ -315,9 +521,6 @@
             <!-- Footer -->
             <div class="mt-8 text-center text-gray-600">
                 <p class="text-sm">Made with 💝 for the most amazing woman in the world</p>
-            </div>
-            <div class="mt-8 text-center text-gray-900 fw-bold text-lg">
-                <p class="text-sm">You missed something...scroll up babee!</p>
             </div>
         </section>
 

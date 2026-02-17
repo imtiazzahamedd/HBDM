@@ -1,4 +1,7 @@
-// Intro Sequence Animation
+// Intro Sequence Animation - TEMPORARILY DISABLED FOR TESTING
+// Uncomment this section when ready to enable the intro animation
+
+/*
 const introSequence = document.getElementById('intro-sequence');
 const mainContent = document.getElementById('main-content');
 
@@ -50,22 +53,38 @@ setTimeout(() => {
     }
 }, totalSequentialTime);
 
-// Fade out intro and reveal main content
-const introExitDelay = totalSequentialTime + 4000;
+// Hold combined view for 4 seconds, then fade out intro
+const totalIntroTime = totalSequentialTime + 4000;
 
 setTimeout(() => {
-    introSequence.style.opacity = '0';
-    introSequence.style.transition = 'opacity 1s ease-out';
+    if (introSequence) {
+        introSequence.style.opacity = '0';
+        introSequence.style.transition = 'opacity 1s ease-out';
 
-    setTimeout(() => {
-        introSequence.style.display = 'none';
-        mainContent.style.opacity = '1';
-        document.body.style.overflow = 'auto'; // Re-enable scrolling
-    }, 1000);
-}, introExitDelay);
+        setTimeout(() => {
+            introSequence.style.display = 'none';
+            if (mainContent) {
+                mainContent.style.opacity = '1';
+            }
+        }, 1000);
+    }
+}, totalIntroTime);
 
 // Lock scrolling during the intro
 document.body.style.overflow = 'hidden';
+*/
+
+// SKIP INTRO - Show main content immediately for testing
+const introSequence = document.getElementById('intro-sequence');
+const mainContent = document.getElementById('main-content');
+if (introSequence) {
+    introSequence.style.display = 'none';
+}
+if (mainContent) {
+    mainContent.style.opacity = '1';
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+}
+
 
 // Scroll to surprise function
 function scrollToSurprise() {
@@ -101,7 +120,7 @@ document.addEventListener('click', (e) => {
     const isHeartCard = e.target.closest('.heart-card');
     const isButton = e.target.closest('button');
     const isGiftBox = e.target.closest('.gift-box-container');
-    
+
     if (!isHeartCard && !isButton && !isGiftBox) {
         const sparkle = document.createElement('div');
         sparkle.className = 'sparkle';
@@ -139,58 +158,36 @@ function openGiftBox() {
     }
 }
 
-// Flip cards logic - 10 Reasons I Love You
-const reasons = [
-    "You are my best friend and soulmate 💝",
-    "Your smile lights up my entire world ✨",
-    "You make me a better person every day 🌟",
-    "Your kindness knows no bounds 💖",
-    "You support my biggest dreams 🚀",
-    "Your laugh is my favorite song 🎵",
-    "You are incredibly beautiful, inside and out 🌹",
-    "Your strength inspires me daily 💪",
-    "You give the best, most warming hugs 🤗",
-    "You are my home and my forever 🏠💝"
-];
+// Countdown Timer - Calculate time together
+// Relationship started: September 3, 2024
+const relationshipStart = new Date(2024, 8, 3); // September 3, 2024 (month is 0-indexed)
 
-// Function to initialize heart cards
-function initializeHeartCards() {
-    const grid = document.querySelector('.reasons-grid');
-    if (grid && grid.children.length === 0) { // Only initialize if not already done
-        reasons.forEach((reason, i) => {
-            const card = document.createElement('div');
-            card.className = 'heart-card animate-float';
-            card.style.animationDelay = `${i * 0.2}s`;
-            card.innerHTML = `
-                <div class="heart-card-inner">
-                    <div class="heart-card-front">
-                        <span class="heart-number">${i + 1}</span>
-                        💝
-                    </div>
-                    <div class="heart-card-back">
-                        ${reason}
-                    </div>
-                </div>
-            `;
+function updateCountdown() {
+    const now = new Date();
+    const diff = now - relationshipStart;
 
-            // Add click event listener
-            card.addEventListener('click', function (e) {
-                e.stopPropagation(); // Prevent event bubbling
-                this.classList.toggle('flipped');
-            });
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor(diff / (1000 * 60));
 
-            grid.appendChild(card);
-        });
-        console.log('Heart cards initialized successfully!');
-    }
+    const daysEl = document.getElementById('days-count');
+    const hoursEl = document.getElementById('hours-count');
+    const minutesEl = document.getElementById('minutes-count');
+
+    if (daysEl) daysEl.textContent = days.toLocaleString();
+    if (hoursEl) hoursEl.textContent = hours.toLocaleString();
+    if (minutesEl) minutesEl.textContent = minutes.toLocaleString();
 }
 
-// Initialize when DOM is ready - try both methods for reliability
+// Interactive Quiz - REMOVED
+
+// Initialize everything when DOM is ready
 if (document.readyState === 'loading') {
-    // DOM is still loading
-    document.addEventListener('DOMContentLoaded', initializeHeartCards);
+    document.addEventListener('DOMContentLoaded', function () {
+        updateCountdown();
+        setInterval(updateCountdown, 60000); // Update every minute
+    });
 } else {
-    // DOM is already loaded
-    initializeHeartCards();
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
 }
-
