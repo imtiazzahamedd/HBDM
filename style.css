@@ -23,6 +23,87 @@ body {
     font-weight: 900;
     font-style: italic;
 }
+.alabu{
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px) saturate(1000%);
+    -webkit-backdrop-filter: blur(10px) saturate(1000%);
+}
+
+/* Maximum Backdrop Blur for Navigation */
+.backdrop-blur-max {
+    backdrop-filter: blur(10px) saturate(1000%);
+    -webkit-backdrop-filter: blur(10px) saturate(1000%);
+}
+
+/* Glassmorphism Effect - Apply to any element */
+.glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px) saturate(1000%);
+    -webkit-backdrop-filter: blur(10px) saturate(1000%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+.glass-strong {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+}
+
+.glass-light {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px) saturate(150%);
+    -webkit-backdrop-filter: blur(15px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.1);
+}
+
+/* Navigation Button Animations */
+.nav-button {
+    animation: nav-pulse 3s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.nav-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.nav-button:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 12px 40px rgba(219, 39, 119, 0.4);
+}
+
+.nav-button:active {
+    transform: scale(0.98);
+}
+
+@keyframes nav-pulse {
+    0%, 100% {
+        box-shadow: 0 8px 24px rgba(219, 39, 119, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba(168, 85, 247, 0.4);
+    }
+}
+
+
 
 /* Floating Hearts Animation */
 .hearts-container {
