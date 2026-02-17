@@ -1,7 +1,4 @@
-// Intro Sequence Animation - TEMPORARILY DISABLED FOR TESTING
-// Uncomment this section when ready to enable the intro animation
-
-/*
+// Intro Sequence Animation
 const introSequence = document.getElementById('intro-sequence');
 const mainContent = document.getElementById('main-content');
 
@@ -21,69 +18,61 @@ const introTexts = [
     { id: 'intro-text-12', duration: 3500 }
 ];
 
-// Dynamic animation calculation
-let currentDelay = 500;
+// Initialize sequence
+function startIntro() {
+    if (!introSequence) return;
+    
+    // Lock scrolling
+    document.body.style.overflow = 'hidden';
+    
+    let currentDelay = 800;
 
-introTexts.forEach((text, index) => {
+    introTexts.forEach((text, index) => {
+        setTimeout(() => {
+            const element = document.getElementById(text.id);
+            if (element) {
+                element.classList.add('intro-text-premium', 'active');
+
+                setTimeout(() => {
+                    element.classList.remove('active');
+                }, text.duration);
+            }
+        }, currentDelay);
+
+        currentDelay += text.duration + 800;
+    });
+
+    // Show combined text view
     setTimeout(() => {
-        const element = document.getElementById(text.id);
-        if (element) {
-            element.style.opacity = '1';
-            element.style.transition = 'opacity 0.8s ease-in';
-
-            setTimeout(() => {
-                element.style.opacity = '0';
-                element.style.transition = 'opacity 0.5s ease-out';
-            }, text.duration);
+        const allTexts = document.getElementById('intro-all');
+        if (allTexts) {
+            allTexts.style.opacity = '1';
+            allTexts.style.transition = 'opacity 1.2s ease-in';
+            allTexts.classList.add('reveal-up', 'revealed');
         }
     }, currentDelay);
 
-    // Increment delay for the next step (duration + buffer)
-    currentDelay += text.duration + 800;
-});
+    // End intro
+    const totalIntroTime = currentDelay + 5000;
 
-// Show combined text view after all sequential steps
-const totalSequentialTime = currentDelay;
+    setTimeout(() => {
+        if (introSequence) {
+            introSequence.style.opacity = '0';
+            introSequence.style.transition = 'opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1)';
 
-setTimeout(() => {
-    const allTexts = document.getElementById('intro-all');
-    if (allTexts) {
-        allTexts.style.opacity = '1';
-        allTexts.style.transition = 'opacity 1s ease-in';
-    }
-}, totalSequentialTime);
-
-// Hold combined view for 4 seconds, then fade out intro
-const totalIntroTime = totalSequentialTime + 4000;
-
-setTimeout(() => {
-    if (introSequence) {
-        introSequence.style.opacity = '0';
-        introSequence.style.transition = 'opacity 1s ease-out';
-
-        setTimeout(() => {
-            introSequence.style.display = 'none';
-            if (mainContent) {
-                mainContent.style.opacity = '1';
-            }
-        }, 1000);
-    }
-}, totalIntroTime);
-
-// Lock scrolling during the intro
-document.body.style.overflow = 'hidden';
-*/
-
-// SKIP INTRO - Show main content immediately for testing
-const introSequence = document.getElementById('intro-sequence');
-const mainContent = document.getElementById('main-content');
-if (introSequence) {
-    introSequence.style.display = 'none';
+            setTimeout(() => {
+                introSequence.style.display = 'none';
+                if (mainContent) {
+                    mainContent.style.opacity = '1';
+                    document.body.style.overflow = 'auto';
+                }
+            }, 1500);
+        }
+    }, totalIntroTime);
 }
-if (mainContent) {
-    mainContent.style.opacity = '1';
-    document.body.style.overflow = 'auto'; // Re-enable scrolling
-}
+
+// Start the intro
+startIntro();
 
 
 // Scroll to surprise function
@@ -98,15 +87,10 @@ function scrollToSurprise() {
         surprise.classList.add('flex');
 
         // Show confetti
-        confetti.classList.remove('hidden');
+        if (confetti) confetti.classList.remove('hidden');
 
         // Scroll to surprise section
-        surprise.scrollIntoView({ behavior: 'smooth' });
-
-        // Hide confetti after 5 seconds
-        setTimeout(() => {
-            confetti.classList.add('hidden');
-        }, 5000);
+        
     } else {
         // Hide surprise
         surprise.classList.add('hidden');
@@ -346,8 +330,9 @@ function updateNextBirthdayCountdown() {
 // Initialize everything when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
+        initScrollReveal();
         updateCountdown();
-        setInterval(updateCountdown, 60000); // Update every minute
+        setInterval(updateCountdown, 1000); // Update every second
 
         updateAnniversaryCountdown();
         setInterval(updateAnniversaryCountdown, 1000); // Update every second
@@ -356,8 +341,9 @@ if (document.readyState === 'loading') {
         setInterval(updateNextBirthdayCountdown, 1000); // Update every second
     });
 } else {
+    initScrollReveal();
     updateCountdown();
-    setInterval(updateCountdown, 60000);
+    setInterval(updateCountdown, 1000);
 
     updateAnniversaryCountdown();
     setInterval(updateAnniversaryCountdown, 1000);
@@ -366,14 +352,43 @@ if (document.readyState === 'loading') {
     setInterval(updateNextBirthdayCountdown, 1000);
 }
 
+// Custom Scroll-Reveal Animation System
+function initScrollReveal() {
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => observer.observe(el));
+}
+
+
 // Navigation Menu Toggle
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
+const navText = document.getElementById('nav-text');
 
 // Toggle navigation menu
-if (navToggle && navMenu) {
+if (navToggle && navMenu && navText) {
     navToggle.addEventListener('click', () => {
+        const isHidden = navMenu.classList.contains('hidden');
         navMenu.classList.toggle('hidden');
+        navToggle.classList.toggle('open');
+
+        // Change button text
+        if (isHidden) {
+            navText.textContent = "I'm always with you my sweetheart";
+        } else {
+            navText.textContent = 'ALABU';
+        }
     });
 }
 
@@ -388,9 +403,9 @@ navLinks.forEach(link => {
         if (targetSection) {
             targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             // Close menu after clicking
-            if (navMenu) {
-                navMenu.classList.add('hidden');
-            }
+            if (navMenu) navMenu.classList.add('hidden');
+            // Reset button text
+            if (navText) navText.textContent = 'ALABU';
         }
     });
 });
@@ -400,7 +415,86 @@ document.addEventListener('click', (e) => {
     if (navMenu && !navMenu.classList.contains('hidden')) {
         if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
             navMenu.classList.add('hidden');
+            if (navText) navText.textContent = 'ALABU';
         }
     }
 });
+
+// Music Player Logic (Local Audio)
+const audio = document.getElementById('local-audio');
+const playPauseBtn = document.getElementById('play-pause-btn');
+const playIcon = document.getElementById('play-icon');
+const pauseIcon = document.getElementById('pause-icon');
+const musicDisc = document.getElementById('music-disc');
+const progressBar = document.getElementById('progress-bar');
+const progressContainer = document.getElementById('progress-container');
+const currentTimeEl = document.getElementById('current-time');
+const totalTimeEl = document.getElementById('total-time');
+
+if (audio && playPauseBtn) {
+    // Play/Pause Toggle
+    const toggleAudio = () => {
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    };
+
+    playPauseBtn.addEventListener('click', toggleAudio);
+    if (musicDisc) musicDisc.addEventListener('click', toggleAudio);
+
+    // Update UI on Play
+    audio.addEventListener('play', () => {
+        if (playIcon) playIcon.classList.add('hidden');
+        if (pauseIcon) pauseIcon.classList.remove('hidden');
+
+        if (musicDisc) {
+            musicDisc.classList.add('animate-disc-spin');
+            musicDisc.classList.remove('pause-animation');
+        }
+    });
+
+    // Update UI on Pause
+    audio.addEventListener('pause', () => {
+        if (playIcon) playIcon.classList.remove('hidden');
+        if (pauseIcon) pauseIcon.classList.add('hidden');
+
+        if (musicDisc) {
+            musicDisc.classList.add('pause-animation');
+        }
+    });
+
+    // Update Progress Bar
+    audio.addEventListener('timeupdate', () => {
+        if (audio.duration) {
+            const progressPercent = (audio.currentTime / audio.duration) * 100;
+            if (progressBar) progressBar.style.width = `${progressPercent}%`;
+            if (currentTimeEl) currentTimeEl.textContent = formatTime(audio.currentTime);
+        }
+    });
+
+    // Set Total Time when metadata is loaded
+    audio.addEventListener('loadedmetadata', () => {
+        if (totalTimeEl) totalTimeEl.textContent = formatTime(audio.duration);
+    });
+
+    // Progress bar click to seek
+    if (progressContainer) {
+        progressContainer.addEventListener('click', (e) => {
+            const rect = progressContainer.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const width = rect.width;
+            const percentage = x / width;
+            audio.currentTime = audio.duration * percentage;
+        });
+    }
+}
+
+function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
 

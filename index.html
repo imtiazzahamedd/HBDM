@@ -16,75 +16,67 @@
 
     <!-- Intro Sequence (Video-like) -->
     <div id="intro-sequence"
-        class="fixed inset-0 z-50 bg-gradient-to-br from-pink-100 via-purple-100 to-rose-100 flex items-center justify-center">
-        <div class="text-center px-6 max-w-2xl">
+        class="fixed inset-0 z-[100] bg-gradient-to-br from-pink-100 via-purple-100 to-rose-100 flex items-center justify-center transition-all duration-1000">
+        <!-- Soft glassmorphism overlay -->
+        <div class="absolute inset-0 backdrop-blur-sm bg-white/10"></div>
+        
+        <div class="text-center px-6 max-w-2xl relative z-10 w-full h-full flex items-center justify-center">
             <!-- Animation Steps 1-12 -->
-            <div id="intro-text-1"
-                class="intro-text absolute inset-0 flex items-center justify-center text-4xl md:text-5xl font-bold text-purple-600 opacity-0">
-                <span>Hiii Babeee <br> 💝</span>
+            <div id="intro-text-1" class="intro-text absolute inset-0 flex flex-col items-center justify-center text-4xl md:text-6xl font-bold text-purple-600 opacity-0 pointer-events-none">
+                <span class="mb-4">Hiii Babeee</span>
+                <span class="text-7xl animate-bounce-gentle">💝</span>
             </div>
-            <div id="intro-text-2"
-                class="intro-text absolute inset-0 flex items-center justify-center text-2xl md:text-4xl font-semibold text-pink-500 opacity-0">
-                <span>tumi ki jano j ajker din ta onek speical...???</span>
+            <div id="intro-text-2" class="intro-text absolute inset-0 flex items-center justify-center text-2xl md:text-5xl font-semibold text-pink-500 opacity-0 pointer-events-none px-4 italic leading-tight">
+                <span>tumi ki jano j <br> ajker din ta onek speical...???</span>
             </div>
-            <div id="intro-text-3"
-                class="intro-text absolute inset-0 flex items-center justify-center text-xl md:text-3xl font-semibold text-pink-500 opacity-0 px-4">
-                <span>karon ajker ei din e ami amar prithibi paichi...<br>ei duniay ami age ashleo ajker din e ami amar
-                    prithibi paichi...<br>it's like it's the day of me getting my world..</span>
+            <div id="intro-text-3" class="intro-text absolute inset-0 flex items-center justify-center text-xl md:text-4xl font-semibold text-pink-600 opacity-0 pointer-events-none px-6 leading-relaxed">
+                <span>karon ajker ei din e ami amar prithibi paichi...<br><span class="text-lg md:text-2xl mt-4 block text-purple-500">ei duniay ami age ashleo ajker din e ami amar prithibi paichi...</span><br><span class="text-sm md:text-xl text-gray-400">it's like it's the day of me getting my world..</span></span>
             </div>
-            <div id="intro-text-4"
-                class="intro-text absolute inset-0 flex items-center justify-center text-4xl md:text-6xl font-bold text-pink-500 opacity-0">
+            <div id="intro-text-4" class="intro-text absolute inset-0 flex items-center justify-center text-5xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500 opacity-0 pointer-events-none">
                 <span>I mean....</span>
             </div>
-            <div id="intro-text-5"
-                class="intro-text absolute inset-0 flex items-center justify-center text-5xl md:text-7xl font-bold text-rose-500 opacity-0">
-                <span>It's your <span class="font-dancing">Birthdayyyyyyy!</span> <br> 🎂</span>
+            <div id="intro-text-5" class="intro-text absolute inset-0 flex flex-col items-center justify-center text-6xl md:text-9xl font-bold text-rose-500 opacity-0 pointer-events-none font-dancing">
+                <span>It's your Birthday!</span>
+                <span class="text-8xl mt-4">🎂</span>
             </div>
-            <div id="intro-text-6"
-                class="intro-text absolute inset-0 flex items-center justify-center text-2xl md:text-4xl font-semibold text-purple-700 opacity-0">
+            <div id="intro-text-6" class="intro-text absolute inset-0 flex items-center justify-center text-2xl md:text-5xl font-semibold text-purple-700 opacity-0 pointer-events-none px-4">
                 <span>Birthday of that person who means everythingggg to meeee</span>
             </div>
-            <div id="intro-text-7"
-                class="intro-text absolute inset-0 flex items-center justify-center text-3xl md:text-5xl font-bold text-purple-600 opacity-0">
-                <span>Happy Birthday jaaann</span>
+            <div id="intro-text-7" class="intro-text absolute inset-0 flex items-center justify-center text-4xl md:text-7xl font-bold text-purple-600 opacity-0 pointer-events-none font-dancing">
+                <span>Happy Birthday jaaann 💝</span>
             </div>
-            <div id="intro-text-8"
-                class="intro-text absolute inset-0 flex items-center justify-center text-3xl md:text-5xl font-semibold text-purple-700 opacity-0">
+            <div id="intro-text-8" class="intro-text absolute inset-0 flex items-center justify-center text-3xl md:text-6xl font-semibold text-purple-700 opacity-0 pointer-events-none italic">
                 <span>Many many returns...</span>
             </div>
-            <div id="intro-text-9"
-                class="intro-text absolute inset-0 flex items-center justify-center text-4xl md:text-6xl font-bold text-rose-500 opacity-0">
-                <span>opppss... <br>thukkkuuuu</span>
+            <div id="intro-text-9" class="intro-text absolute inset-0 flex flex-col items-center justify-center text-5xl md:text-8xl font-bold text-rose-500 opacity-0 pointer-events-none">
+                <span>opppss...</span>
+                <span class="text-4xl md:text-6xl mt-2">thukkkuuuu</span>
             </div>
-            <div id="intro-text-10"
-                class="intro-text absolute inset-0 flex items-center justify-center text-2xl md:text-4xl font-semibold text-purple-700 opacity-0">
+            <div id="intro-text-10" class="intro-text absolute inset-0 flex items-center justify-center text-2xl md:text-5xl font-semibold text-purple-700 opacity-0 pointer-events-none px-6 text-center">
                 <span>Many many happy returns of the day sweetheart...</span>
             </div>
-            <div id="intro-text-11"
-                class="intro-text absolute inset-0 flex items-center justify-center text-2xl md:text-4xl font-semibold text-purple-700 opacity-0">
+            <div id="intro-text-11" class="intro-text absolute inset-0 flex items-center justify-center text-2xl md:text-5xl font-semibold text-purple-700 opacity-0 pointer-events-none px-6">
                 <span>The Happiest birthday to the sweetest person in my life...</span>
             </div>
-            <div id="intro-text-12"
-                class="intro-text absolute inset-0 flex items-center justify-center text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 font-dancing opacity-0">
-                <span><span class="font-dancing">I Love You, </span><span class="font-dancing">Mitisa</span><span
-                        class="font-dancing">! 💝</span></span>
+            <div id="intro-text-12" class="intro-text absolute inset-0 flex flex-col items-center justify-center text-7xl md:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 font-dancing opacity-0 pointer-events-none">
+                <span>I Love You,</span>
+                <span class="text-9xl">Mitisa! 💝</span>
             </div>
-
+            
             <!-- All texts combined (shown at the end) -->
-            <div id="intro-all" class="opacity-0 space-y-4 max-h-[80vh] overflow-y-auto py-8">
-                <div class="text-3xl font-bold text-purple-600">Hiii Babeee 💝</div>
-                <div class="text-lg text-pink-500">tumi ki jano j ajker din ta onek speical...???</div>
-                <div class="text-lg text-pink-500">karon ajker ei din e ami amar prithibi paichi...<br>ei duniay ami
-                    age ashleo ajker din e ami amar prithibi paichi...<br>it's like it's the day of me getting my world..</div>
-                <div class="text-4xl font-bold text-rose-500 ">It's your <span class="font-dancing">Birthdayyyyyyy!</span> <br> 🎂</div>
-                <div class="text-xl text-purple-700 font-semibold">Birthday of that person who means everything to me 💝
+            <div id="intro-all" class="opacity-0 space-y-6 max-h-[85vh] overflow-y-auto py-12 px-4 glass-strong rounded-[40px] shadow-3xl border-2 border-white/50 w-full mx-auto">
+                <div class="text-4xl font-bold text-purple-600 font-dancing">Hiii Babeee 💝</div>
+                <div class="text-xl text-pink-500 italic">tumi ki jano j ajker din ta onek speical...???</div>
+                <div class="text-lg text-pink-600 leading-relaxed bg-white/30 rounded-2xl p-4">
+                    karon ajker ei din e ami amar prithibi paichi...<br>
+                    <span class="text-sm opacity-75">it's like it's the day of me getting my world..</span>
                 </div>
-                <div class="text-2xl font-bold text-purple-600">Happy Birthday Jaan 💝</div>
-                <div class="text-lg text-purple-700 italic">Many many happy returns of the day sweetheart...</div>
-                <div
-                    class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 font-dancing">
-                    <span class="font-dancing">I Love You, </span><span class="font-dancing">Mitisa</span><span
-                        class="font-dancing">! 💝</span>
+                <div class="text-5xl font-bold text-rose-500 font-dancing">It's your Birthdayyyyy! 🎂</div>
+                <div class="text-2xl text-purple-700 font-semibold drop-shadow-sm">Everything to me 💝</div>
+                <div class="text-3xl font-bold text-purple-600">Happy Birthday Jaan 💝</div>
+                <div class="text-lg text-purple-700 italic border-t border-purple-200 pt-4">Many many happy returns of the day sweetheart...</div>
+                <div class="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 font-dancing py-4">
+                    I Love You, Mitisa! 💝
                 </div>
             </div>
         </div>
@@ -93,14 +85,14 @@
     <!-- Main Content (Hidden initially) -->
     <div id="main-content" class="opacity-0 transition-opacity duration-1000">
         <!-- Floating Navigation Bar -->
-        <nav id="floating-nav" class="fixed bottom-3 right-1 z-50 transition-all duration-500">
+        <nav id="floating-nav" class="fixed bottom-3 right-3 z-50 transition-all duration-500 w-auto">
             <!-- Toggle Button - Always visible and fixed -->
-            <button id="nav-toggle" class="nav-button alabu text-white font-bold py-1 px-3 rounded-xl hover:scale-110 transition-all duration-300 fixed bottom-4 right-1 z-[60]">
-                <span class="text-sm tracking-wider">ALABU</span>
+            <button id="nav-toggle" class="nav-button alabu text-white font-bold py-2 px-6 rounded-xl transition-all duration-300 z-[60] border-2 border-white/30 hover:scale-105 flex items-center justify-center whitespace-nowrap min-w-[120px]">
+                <span id="nav-text" class="text-xs tracking-wider text-center w-full text-gray-500">ALABU</span>
             </button>
             
             <!-- Menu Dropdown -->
-            <div id="nav-menu" class="hidden fixed bottom-20 right-3 bg-white/70 backdrop-blur-max rounded-3xl shadow-2xl p-4 max-h-[70vh] overflow-y-auto z-50 border border-pink-200/50">
+            <div id="nav-menu" class="hidden absolute bottom-20 right-3 bg-white/70 backdrop-blur-max rounded-3xl shadow-2xl p-4 max-h-[70vh] overflow-y-auto z-50 border border-pink-200/50 min-w-[200px]">
                 <div class="space-y-2 min-w-[200px]">
                     <a href="#section-intro" class="nav-link flex items-center gap-3 p-3 rounded-xl hover:bg-pink-100 transition-all duration-300 text-gray-700 hover:text-pink-600">
                         <span class="text-2xl">💝</span>
@@ -240,7 +232,7 @@
             
             <div class="relative z-10 max-w-2xl w-full text-center">
                 <!-- Glowing card container -->
-                <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-2xl border-4 border-transparent bg-gradient-to-br from-white via-pink-50 to-purple-50 relative overflow-hidden">
+                <div class="reveal reveal-zoom bg-white/90 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-2xl border-4 border-transparent bg-gradient-to-br from-white via-pink-50 to-purple-50 relative overflow-hidden">
                     <!-- Animated border glow -->
                     <div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-pink-400 via-purple-400 to-rose-400 opacity-30 blur-xl animate-pulse-gentle"></div>
                     
@@ -293,7 +285,7 @@
             class="relative z-10 h-screen flex flex-col items-center justify-center px-4 py-20 snap-start snap-always">
 
             <div
-                class="max-w-md w-full glass-strong rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition-all duration-500 animate-slide-up border-4 border-pink-200">
+                class="reveal reveal-up max-w-md w-full glass-strong rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition-all duration-500 border-4 border-pink-200">
 
                 <!-- Cake Animation -->
                 <div class="text-center mb-6">
@@ -345,7 +337,7 @@
         <!-- Section 4: Special Surprise Gift Box -->
         <section id="section-gift" class="relative z-10 h-screen flex flex-col items-center justify-center px-4 py-20 snap-start snap-always overflow-hidden">
             <div class="max-w-lg w-full text-center max-h-[90vh] overflow-y-auto">
-                <h2 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 mb-6 font-dancing animate-fade-in">
+                <h2 class="reveal reveal-up text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 mb-6 font-dancing">
                     I Have Something Special For You 🎁
                 </h2>
                 
@@ -401,7 +393,7 @@
         <!-- Section 5: Our Journey Together - Countdown -->
         <section id="section-journey" class="relative z-10 h-screen flex flex-col items-center justify-center px-4 py-20 snap-start snap-always">
             <div class="max-w-2xl w-full text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 mb-8 font-dancing">
+                <h2 class="reveal reveal-up text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 mb-8 font-dancing">
                     Our Beautiful Journey 💝
                 </h2>
                 
@@ -441,7 +433,7 @@
                 
                 <div class="space-y-8">
                     <!-- Timeline Item 1 -->
-                    <div class="timeline-item flex gap-4 items-start animate-fade-in">
+                    <div class="reveal reveal-left timeline-item flex gap-4 items-start">
                         <div class="timeline-marker flex-shrink-0 w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg">
                             �
                         </div>
@@ -453,7 +445,7 @@
                     </div>
                     
                     <!-- Timeline Item 2 -->
-                    <div class="timeline-item flex gap-4 items-start animate-fade-in animation-delay-200">
+                    <div class="reveal reveal-right timeline-item flex gap-4 items-start">
                         <div class="timeline-marker flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-rose-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg">
                             💕
                         </div>
@@ -465,7 +457,7 @@
                     </div>
                     
                     <!-- Timeline Item 3 -->
-                    <div class="timeline-item flex gap-4 items-start animate-fade-in animation-delay-400">
+                    <div class="reveal reveal-left timeline-item flex gap-4 items-start">
                         <div class="timeline-marker flex-shrink-0 w-12 h-12 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg">
                             �
                         </div>
@@ -477,7 +469,7 @@
                     </div>
                     
                     <!-- Timeline Item 4 -->
-                    <div class="timeline-item flex gap-4 items-start animate-fade-in animation-delay-600">
+                    <div class="reveal reveal-right timeline-item flex gap-4 items-start">
                         <div class="timeline-marker flex-shrink-0 w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg">
                             🏠
                         </div>
@@ -494,7 +486,7 @@
         <!-- Section 7: Love Letter -->
         <section id="section-letter" class="relative z-10 h-screen flex flex-col items-center justify-center px-4 py-20 snap-start snap-always">
             <div class="max-w-2xl w-full">
-                <div class="glass-strong rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-white/40">
+                <div class="reveal reveal-zoom glass-strong rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-white/40">
                     <div class="text-center mb-6">
                         <div class="text-5xl mb-4">💌</div>
                         <h2 class="text-3xl md:text-4xl font-bold text-purple-600 font-dancing">A Letter to My Love</h2>
@@ -522,7 +514,7 @@
         <!-- Section 8: Wish List -->
         <section id="section-wishes" class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-20 snap-start snap-always">
             <div class="max-w-3xl w-full">
-                <h2 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 mb-12 text-center font-dancing">
+                <h2 class="reveal reveal-up text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 mb-12 text-center font-dancing">
                     My Wishes For You 🌟
                 </h2>
                 
@@ -581,7 +573,7 @@
                 
                 <div class="space-y-6">
                     <!-- Special Message 1 -->
-                    <div class="bg-gradient-to-br from-pink-50 via-purple-50 to-rose-50 rounded-3xl p-6 md:p-8 shadow-xl border-2 border-pink-200 transform hover:scale-102 transition-all duration-300">
+                    <div class="reveal reveal-left bg-gradient-to-br from-pink-50 via-purple-50 to-rose-50 rounded-3xl p-6 md:p-8 shadow-xl border-2 border-pink-200 transform hover:scale-102 transition-all duration-300">
                         <div class="flex items-start gap-4">
                             <div class="text-4xl flex-shrink-0">💝</div>
                             <div>
@@ -596,7 +588,7 @@
                     </div>
                     
                     <!-- Special Message 2 -->
-                    <div class="bg-gradient-to-br from-purple-50 via-rose-50 to-pink-50 rounded-3xl p-6 md:p-8 shadow-xl border-2 border-purple-200 transform hover:scale-102 transition-all duration-300">
+                    <div class="reveal reveal-right bg-gradient-to-br from-purple-50 via-rose-50 to-pink-50 rounded-3xl p-6 md:p-8 shadow-xl border-2 border-purple-200 transform hover:scale-102 transition-all duration-300">
                         <div class="flex items-start gap-4">
                             <div class="text-4xl flex-shrink-0">✨</div>
                             <div>
@@ -611,7 +603,7 @@
                     </div>
                     
                     <!-- Special Message 3 -->
-                    <div class="bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 rounded-3xl p-6 md:p-8 shadow-xl border-2 border-rose-200 transform hover:scale-102 transition-all duration-300">
+                    <div class="reveal reveal-up bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 rounded-3xl p-6 md:p-8 shadow-xl border-2 border-rose-200 transform hover:scale-102 transition-all duration-300">
                         <div class="flex items-start gap-4">
                             <div class="text-4xl flex-shrink-0">💕</div>
                             <div>
@@ -638,41 +630,39 @@
                 </h2>
                 
                 <!-- Photo Grid -->
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="reveal reveal-zoom grid grid-cols-2 md:grid-cols-3 gap-4">
                     <!-- Moment 1 -->
                     <div class="aspect-square bg-gradient-to-br from-pink-200 to-purple-200 rounded-2xl shadow-xl flex items-center justify-center text-6xl transform hover:scale-105 transition-all duration-300 cursor-pointer">
-                        💑
+                        <img src="img/first-meet.jpg" alt="" class="rounded-2xl">
                     </div>
                     <!-- Moment 2 -->
                     <div class="aspect-square bg-gradient-to-br from-purple-200 to-rose-200 rounded-2xl shadow-xl flex items-center justify-center text-6xl transform hover:scale-105 transition-all duration-300 cursor-pointer">
-                        🌹
+                        <img src="img/cpl.JPG" alt="" class="rounded-2xl">
                     </div>
                     <!-- Moment 3 -->
                     <div class="aspect-square bg-gradient-to-br from-rose-200 to-pink-200 rounded-2xl shadow-xl flex items-center justify-center text-6xl transform hover:scale-105 transition-all duration-300 cursor-pointer">
-                        💝
+                        <img src="img/ring.jpg" alt="" class="rounded-2xl">
                     </div>
                     <!-- Moment 4 -->
                     <div class="aspect-square bg-gradient-to-br from-pink-200 to-purple-200 rounded-2xl shadow-xl flex items-center justify-center text-6xl transform hover:scale-105 transition-all duration-300 cursor-pointer">
-                        🎂
+                        <img src="img/tea.jpg" alt="" class="rounded-2xl">
                     </div>
                     <!-- Moment 5 -->
                     <div class="aspect-square bg-gradient-to-br from-purple-200 to-rose-200 rounded-2xl shadow-xl flex items-center justify-center text-6xl transform hover:scale-105 transition-all duration-300 cursor-pointer">
-                        ✨
+                        <img src="img/date.jpeg" alt="" class="rounded-2xl">
                     </div>
                     <!-- Moment 6 -->
                     <div class="aspect-square bg-gradient-to-br from-rose-200 to-pink-200 rounded-2xl shadow-xl flex items-center justify-center text-6xl transform hover:scale-105 transition-all duration-300 cursor-pointer">
-                        💕
+                        <img src="img/mrd.jpeg" alt="" class="rounded-2xl">
                     </div>
                 </div>
-                
-                <p class="text-center text-gray-600 mt-8 italic">Replace these with your actual photos! 📷</p>
             </div>
         </section>
 
         <!-- Section 10: Thank You Message -->
         <section id="section-thankyou" class="relative z-10 h-screen flex flex-col items-center justify-center px-4 py-20 snap-start snap-always">
             <div class="max-w-2xl w-full">
-                <div class="glass-strong rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-white/40 relative overflow-hidden">
+                <div class="reveal reveal-up glass-strong rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-white/40 relative overflow-hidden">
                     <!-- Floating hearts -->
                     <div class="absolute top-4 right-4 text-3xl animate-float opacity-50">💝</div>
                     <div class="absolute bottom-4 left-4 text-3xl animate-float-slow opacity-50">💕</div>
@@ -700,7 +690,7 @@
                     Spin the Heart! 💝
                 </h2>
                 
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl">
+                <div class="reveal reveal-zoom bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl">
                     <!-- Spinning Heart -->
                     <div id="spin-heart" class="text-9xl mb-8 cursor-pointer transform transition-all duration-1000 hover:scale-110" onclick="spinHeart()">
                         💝
@@ -728,24 +718,57 @@
                 <div class="glass rounded-3xl p-8 md:p-12 shadow-2xl">
                     <div class="text-center mb-8">
                         <div class="text-7xl mb-4 animate-pulse-gentle">🎵</div>
-                        <h3 class="text-2xl font-bold text-purple-600 mb-2">Your Favorite Song</h3>
-                        <p class="text-gray-600 italic">The song that reminds me of you</p>
+                        <h3 class="text-2xl font-bold text-purple-600 mb-2">The song that reminds me of you</h3>
                     </div>
                     
-                    <!-- Music Player Placeholder -->
-                    <div class="glass-light rounded-2xl p-6 text-center">
-                        <p class="text-gray-700 mb-4">🎶 Add your favorite song here! 🎶</p>
-                        <p class="text-sm text-gray-500">You can embed a YouTube video, Spotify player, or audio file</p>
-                        
-                        <!-- Example: Uncomment and add your YouTube embed -->
-                        <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
-                        
-                        <div class="mt-6 flex justify-center gap-4">
-                            <div class="w-16 h-16 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full flex items-center justify-center text-white text-2xl cursor-pointer hover:scale-110 transition-all">
-                                ▶️
+                    <!-- Audio Player UI -->
+                    <div class="reveal reveal-up glass-light rounded-3xl p-8 text-center">
+                            <!-- Disc Animation (Vinyl Record Design) -->
+                            <div id="music-disc" class="w-32 h-32 mx-auto bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-900 rounded-full border-4 border-white/20 flex items-center justify-center shadow-2xl relative z-10 cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden">
+                                <!-- Vinyl Grooves Overlay -->
+                                <div class="vinyl-grooves"></div>
+                                
+                                <!-- Central Decorative Circle -->
+                                <div class="w-12 h-12 bg-gradient-to-tr from-purple-500 to-pink-500 rounded-full border-2 border-white/30 flex items-center justify-center relative z-10 center-heart">
+                                    <!-- Romantic Heart Icon -->
+                                    <svg viewBox="0 0 24 24" class="w-7 h-7 fill-white animate-pulse">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                        <div class="mb-8">
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="mb-6 px-4">
+                            <div class="relative w-full h-2 bg-purple-100 rounded-full cursor-pointer" id="progress-container">
+                                <div class="absolute h-full bg-gradient-to-r from-pink-500 to-purple-600 rounded-full w-0" id="progress-bar"></div>
+                                <div class="absolute top-1/2 -mt-2 -ml-2 w-4 h-4 bg-white border-2 border-purple-600 rounded-full shadow-lg opacity-0 transition-opacity hover:opacity-100" id="progress-handle"></div>
+                            </div>
+                            <div class="flex justify-between mt-2 text-xs text-gray-500 font-semibold">
+                                <span id="current-time">0:00</span>
+                                <span id="total-time">0:00</span>
                             </div>
                         </div>
+
+                        <!-- Controls -->
+                        <div class="flex justify-center items-center gap-8">
+                            <button id="play-pause-btn" class="btn-material w-20 h-20 rounded-full">
+                                <!-- Play Icon SVG -->
+                                <svg id="play-icon" viewBox="0 0 24 24" class="ml-1">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                                <!-- Pause Icon SVG -->
+                                <svg id="pause-icon" viewBox="0 0 24 24" class="hidden">
+                                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
+
+                    <!-- Local Audio Player (Hidden) -->
+                    <audio id="local-audio" src="music/samjhawan.mpeg"></audio>
                 </div>
             </div>
         </section>
@@ -757,7 +780,7 @@
                     My Promises to You 💍
                 </h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="reveal reveal-up grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Promise 1 -->
                     <div class="promise-card bg-gradient-to-br from-pink-100 to-purple-100 rounded-3xl p-6 shadow-xl transform hover:scale-105 hover:rotate-1 transition-all duration-300">
                         <div class="text-4xl mb-3">💝</div>
@@ -810,7 +833,7 @@
                     Next Anniversary Countdown ⏰
                 </h2>
                 
-                <div class="bg-gradient-to-br from-pink-100 via-purple-100 to-rose-100 rounded-3xl p-8 md:p-12 shadow-2xl">
+                <div class="reveal reveal-zoom bg-gradient-to-br from-pink-100 via-purple-100 to-rose-100 rounded-3xl p-8 md:p-12 shadow-2xl">
                     <div class="text-6xl mb-6 animate-bounce-gentle">💍</div>
                     <h3 class="text-2xl font-bold text-purple-600 mb-8">Our Next Wedding Anniversary</h3>
                     
@@ -846,7 +869,7 @@
                     Words That Remind Me of Us 💬
                 </h2>
                 
-                <div class="space-y-6">
+                <div class="reveal reveal-up space-y-6">
                     <!-- Quote 1 -->
                     <div class="bg-gradient-to-br from-pink-50 to-purple-50 rounded-3xl p-8 shadow-xl transform hover:scale-102 transition-all duration-300 border-l-4 border-pink-500">
                         <p class="text-2xl md:text-3xl font-serif italic text-gray-700 mb-4">
@@ -881,7 +904,7 @@
                     Our Future Dreams 🌠
                 </h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="reveal reveal-zoom grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Dream 1 -->
                     <div class="bg-gradient-to-br from-pink-100 to-purple-100 rounded-3xl p-6 shadow-xl transform hover:scale-105 transition-all duration-300">
                         <div class="text-5xl mb-4 text-center">🏡</div>
@@ -934,7 +957,7 @@
                     Need a Hug? 🤗
                 </h2>
                 
-                <div class="bg-gradient-to-br from-pink-100 via-purple-100 to-rose-100 rounded-3xl p-12 shadow-2xl">
+                <div class="reveal reveal-zoom bg-gradient-to-br from-pink-100 via-purple-100 to-rose-100 rounded-3xl p-12 shadow-2xl">
                     <div id="hug-emoji" class="text-9xl mb-8 cursor-pointer transform transition-all duration-500 hover:scale-110" onclick="sendVirtualHug()">
                         🤗
                     </div>
@@ -961,7 +984,7 @@
                     Our Year Together 📅
                 </h2>
                 
-                <div class="space-y-6">
+                <div class="reveal reveal-up space-y-6">
                     <!-- Highlight 1 -->
                     <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl transform hover:scale-102 transition-all duration-300">
                         <div class="flex items-start gap-4">
@@ -1016,7 +1039,7 @@
                     Countdown to Your Next Birthday! 🎂
                 </h2>
                 
-                <div class="bg-gradient-to-br from-pink-100 via-purple-100 to-rose-100 rounded-3xl p-8 md:p-12 shadow-2xl">
+                <div class="reveal reveal-zoom bg-gradient-to-br from-pink-100 via-purple-100 to-rose-100 rounded-3xl p-8 md:p-12 shadow-2xl">
                     <div class="text-6xl mb-6 animate-bounce-gentle">🎉</div>
                     <h3 class="text-2xl font-bold text-purple-600 mb-8">Can't wait to celebrate with you again!</h3>
                     
