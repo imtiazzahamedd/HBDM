@@ -124,6 +124,9 @@ function scrollToSurprise() {
         if (confetti) confetti.classList.remove('hidden');
 
         // Scroll to surprise section
+        setTimeout(() => {
+            surprise.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
         
     } else {
         // Hide surprise
