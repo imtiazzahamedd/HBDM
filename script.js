@@ -95,18 +95,25 @@ function scrollToSurprise() {
     }
 }
 
-// Add sparkle effect on touch/click
+// Add sparkle effect on touch/click - but NOT on heart cards or interactive elements
 document.addEventListener('click', (e) => {
-    const sparkle = document.createElement('div');
-    sparkle.className = 'sparkle';
-    sparkle.style.left = e.pageX + 'px';
-    sparkle.style.top = e.pageY + 'px';
-    sparkle.innerHTML = '✨';
-    document.body.appendChild(sparkle);
+    // Don't add sparkles if clicking on heart cards or other interactive elements
+    const isHeartCard = e.target.closest('.heart-card');
+    const isButton = e.target.closest('button');
+    const isGiftBox = e.target.closest('.gift-box-container');
+    
+    if (!isHeartCard && !isButton && !isGiftBox) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = e.pageX + 'px';
+        sparkle.style.top = e.pageY + 'px';
+        sparkle.innerHTML = '✨';
+        document.body.appendChild(sparkle);
 
-    setTimeout(() => {
-        sparkle.remove();
-    }, 1000);
+        setTimeout(() => {
+            sparkle.remove();
+        }, 1000);
+    }
 });
 
 // Gift Box Opening Function
