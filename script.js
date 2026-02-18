@@ -6,8 +6,8 @@ let introTimeouts = [];
 
 // Define all 12 sequence steps
 const introTexts = [
-    { id: 'intro-text-1', duration: 2500 },
-    { id: 'intro-text-2', duration: 3000 },
+    { id: 'intro-text-1', duration: 1400 },
+    { id: 'intro-text-2', duration: 2000 },
     { id: 'intro-text-3', duration: 4500 }, // Longer Bengali message
     { id: 'intro-text-4', duration: 2000 },
     { id: 'intro-text-5', duration: 2500 },
@@ -17,7 +17,7 @@ const introTexts = [
     { id: 'intro-text-9', duration: 2000 },
     { id: 'intro-text-10', duration: 3000 },
     { id: 'intro-text-11', duration: 3000 },
-    { id: 'intro-text-12', duration: 3500 }
+    { id: 'intro-text-12', duration: 3000 }
 ];
 
 // Initialize sequence
@@ -46,23 +46,10 @@ function startIntro() {
         currentDelay += text.duration + 800;
     });
 
-    // Show combined text view
-    const tCombined = setTimeout(() => {
-        const allTexts = document.getElementById('intro-all');
-        if (allTexts) {
-            allTexts.style.opacity = '1';
-            allTexts.style.transition = 'opacity 1.2s ease-in';
-            allTexts.classList.add('reveal-up', 'revealed');
-        }
-    }, currentDelay);
-    introTimeouts.push(tCombined);
-
     // End intro
-    const totalIntroTime = currentDelay + 5000;
-
     const tEnd = setTimeout(() => {
         finishIntro();
-    }, totalIntroTime);
+    }, currentDelay);
     introTimeouts.push(tEnd);
 }
 
